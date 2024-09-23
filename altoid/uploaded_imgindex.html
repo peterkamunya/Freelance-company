@@ -1,0 +1,395 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelancer Website</title>
+    <style type="text/css">
+        /* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-image: url(image/workplace-late-night-night-work-concept.jpg);
+    opacity: 1;
+    color: hsl(0, 0%, 100%);
+}
+
+header 
+{
+    background: #edeaea;
+    color: hsl(257, 70%, 8%);
+    padding: 1em 0;
+    text-align: center;
+    font-size:20px;
+    margin:10px;
+    padding:10px;
+    padding-left:20px;
+    opacity: 1.0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding:2zpx;
+    border-radius: 2px white;
+    color:#000000
+}
+
+nav ul li {
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color:black;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 23px;
+    border: 0.5px solid white;
+    border-radius: 8px;
+    width: 100px;
+}
+
+section {
+    padding: 2em 1em;
+    text-align: center;
+}
+
+#home {
+ 
+   border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: hsl(0, 18%, 96%);
+    margin:0;
+    height: 700px;
+    font-weight:600;
+    word-spacing: 2px;
+    font-size: 21px;
+    font-family: sans-serif;
+    background-image: url(image/Screenshot\ \(759\).png);
+    opacity: 1.0;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
+#services .services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+    opacity: 0.7;
+    background-image: url(image/top-view-desk-with-laptop-coffee.jpg);
+
+}
+@media  only screen and (max-width:840px){
+.main-box.top
+{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+};
+.top.box{
+    margin: 10px, 10px;
+
+}
+.bottom{margin-top: o;}}
+
+#services .service {
+    background: #ffffff;
+    color:#000000;
+    border:2px solid rgb(76, 74, 74);
+    opacity: 1;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    background: #f3f2f8;
+    padding: 1em;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color:#0c0c0c;
+}
+
+form label {
+    margin-bottom: 0.5em;
+}
+
+form input {
+    padding: 0.5em;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #6452ea;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 0.5em 1em;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: 2em;
+}
+img{
+    width: 90px;
+    height:90px;
+    background-color: none;
+
+
+}
+img:hover{
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+main{
+    background-color: #0c0c0c;
+
+}
+
+@media (max-width: 768px) 
+{
+    nav ul {
+        flex-direction: column;
+    }
+
+    #services .services-container {
+        flex-direction: column;
+    }
+    .services{
+        background: url(image/workplace-night-night-work-concept.jpg);
+    }
+}
+#about{
+    color:white;
+    height: 500px;
+    font-weight:600;
+    word-spacing: 2px;
+    font-size: 21px;
+    font-family: sans-serif;
+    height:500px;
+    
+
+}
+h4{
+    color: #d211a5;
+    font-size: 28px;
+    font-weight: 900;
+  
+
+}
+h1{
+    color: #dc12ad;
+    font-size: 28px;
+    font-weight: 900;
+    font-family:sans-serif;
+}
+.h7{
+    color: #d212a5;
+    font-size: 33px;
+    font-weight: 1300;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h6{
+    color: #940873;
+    font-size: 28px;
+    font-weight: 900;
+    font-family:sans-serif;
+    
+}
+.home-1{
+    background-color: #0d0b0b;
+    opacity: 0.9;
+    height: 420px;
+}
+.home-1:hover{
+    background-color: #f3f2f8;
+    color:rgb(7, 6, 6);
+}
+a:hover{
+    border-color: #d211a5;
+
+}
+.service:hover{
+    background-color: #edeaea;
+
+}
+.survey a{
+    text-decoration: none;
+    color:black;
+    background: white;
+    display: center;
+    justify-content: space-between;
+
+    
+
+}
+.form-group button
+ {
+    padding: 10px 15px;
+    background-color: #4b0082; /* Purple color for the button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <script> document.addEventListener('DOMContentLoaded', function() {
+        const loginForm = document.getElementById('login-form');
+        const createAccountForm = document.getElementById('create-account-form');
+    
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            // Implement login functionality here
+            alert(`Logging in with email: ${email}`);
+        });
+    
+        createAccountForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('create-email').value;
+            const password = document.getElementById('create-password').value;
+            const confirmPassword = document.getElementById('create-confirm-password').value;
+            
+            if (password === confirmPassword) {
+                // Implement create account functionality here
+                alert(`Creating account with email: ${email}`);
+            } else {
+                alert('Passwords do not match.');
+            }
+        });
+    });
+    </script>
+    <div class="main">
+    <header>
+        <nav>
+            <ul>
+                <img src="image/Screenshot (759).png">StudentSccessHub
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#login">Login</a></li>
+                <li><a href="#create-account">Create Account</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+       <div class="home-1"><h7> StudentSccessHub</h7>
+        <p>
+            Your One-Stop Solution for Assignment Help, Web Development, and More!
+            At KenproFreelance, we are dedicated to providing top-notch services tailored to meet your needs. Whether you're a student seeking help with assignments or a business looking to establish a strong online presence, we've got you covered.
+            
+            <br><h6>Why Choose Us?</h6><br>
+            Expertise Across Domains
+            Our team of skilled professionals brings expertise in various fields,<br> ensuring that you receive high-quality assistance and solutions.</p>
+       </div>
+        </section>
+    <section id="about">
+        <h4>About Us</h4>
+        <p>  Hello! Welcome to StudentSuccessHub, where we are passionate about empowering students to excel in their academic journeys. Our team of experts is dedicated to providing top-notch assignment help, editing and proofreading, technical writing, and content writing services. With over a decade of experience, we understand the unique challenges students face and are here to support you every step of the way. At StudentSuccessHub, we believe that every student deserves the opportunity to succeed.</p>
+    <section><h4> Mission</h4>
+        <p>Our mission is to deliver high-quality, personalized assistance tailored to your individual needs. Whether you're struggling with a complex assignment, need a meticulous editor, or require professional content writing, we are here to help you achieve your academic goals.</p>
+    </section>
+    </section>
+
+    <section id="services">
+        <h1>Our Services</h1>
+        <div class="services-container">
+            <div class="service">
+                <h2>Assignment Help</h2>
+                <p>Struggling with your assignment? Let our experts provide you with comprehensive support to ensure you get the grades you deserve..</p>
+            </div>
+            <div class="service">
+                <h2>Editing and proofreading</h2>
+                <p>Our editing and proofreading services ,Ensure your work is polished and professional with our meticulous editing and proofreading services .</p>
+            </div>
+            <div class="service">
+                <h2>Technical Writing</h2>
+                <p>Need technical documents? Our experienced writers can create clear and precise content tailored to your needs.</p>
+            </div>
+            <div class="service">
+                <h2>Content Writing</h2>
+                <p>From essays to reports, our content writing services will help you present your ideas effectively and persuasively.</p>
+            </div>
+            <div class="service">
+                <h2>Online quiz</h2>
+                <p>Getting low grades in your quiz? Worry no more, our team can help you in completing those quizs</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h1>Contact</h1>
+        <p>Feel free to get in touch if you'd like to discuss a project, request a quote, or just say hello. You can reach me at:</p>
+        <p>Phone: +2540757556131</p>
+        <p>Email:kenniemanina@gmail.com</p>
+    </section>
+
+    <section id="login">
+        <h1>Login</h1>
+        <form id="login-form">
+            <label for="login-email">Email:</label>
+            <input type="email" id="login-email" required>
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" required>
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+    <section id="create-account">
+        <h1>Create Account</h1>
+        <form id="create-account-form">
+            <label for="create-email">Email:</label>
+            <input type="email" id="create-email" required>
+            <label for="create-password">Password:</label>
+            <input type="password" id="create-password" required>
+            <label for="create-confirm-password">Confirm Password:</label>
+            <input type="password" id="create-confirm-password" required>
+            <button type="submit">Create Account</button>
+
+        </form>
+        
+    </section>
+    <div class="survey">
+    
+        <div class="form-group">
+            <button type="submit">Submit</button>
+            <a href="chat.html"><button >Chatform</button></a>
+            <a href="survey.html"><button >SurveyForm</button></a>
+            </div>
+    <footer>
+        <p>&copy; 2024 studentSuccessfulHub Freelancer Website. All rights reserved.</p>
+    </footer>
+</div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

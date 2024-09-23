@@ -1,0 +1,359 @@
+<?php 
+session_start();
+include 'config.php';
+
+if (isset($_POST['submit'])) {
+
+        // Collect form data
+        $title = $_POST['title'];
+        $title = filter_var($title,FILTER_SANITIZE_STRING);
+        $email =  $_POST['email'];
+        $email = filter_var($email,FILTER_SANITIZE_STRING);
+        $description =  $_POST['description'];
+        $description = filter_var($description,FILTER_SANITIZE_STRING);
+        $action = $_POST['action'];
+        $action = filter_var($action,FILTER_SANITIZE_STRING);
+        $image = $_FILES['image']['name'];
+        $image_tmp_name = $_FILES['image']['tmp_name'];
+        $image_size = $_FILES['image']['size'];
+        $image_folder = 'uploaded_img'.$image;
+
+        $select_jobs = $conn->prepare('SELECT * FROM jobs WHERE title = ? AND email=? AND description = ?  AND image=? AND status = ? AND action = ?');
+        $select_jobs->execute([$title,$email,$description,$image,'pending',$action]);
+
+        if($select_jobs->rowCount()>0){
+            $message = 'message already sent';
+        }else{
+            $insert_jobs = $conn->prepare('INSERT INTO jobs(title,email,description,image,status,action) VALUES(?,?,?,?,?,?)');
+            $insert_jobs->execute([$title,$email,$description,$image,'pending',$action]);
+
+            if($insert_jobs){
+                move_uploaded_file($image_tmp_name,$image_folder);
+                $message = 'message sent successfully';
+            }
+        }
+    }
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentSccessHub</title>
+    <script>
+    
+    // Start of LiveChat (www.livechat.com) code
+    window.__lc = window.__lc || {};
+    window.__lc.license = 18112341;
+    window.__lc.integration_name = "manual_restart_trial";
+    window.__lc.product_name = "livechat";
+
+    (function(n,t,c) {
+        function i(n) { return e._h ? e._h.apply(null,n) : e._q.push(n) }
+        var e = {
+            _q: [],
+            _h: null,
+            _v: "2.0",
+            on: function() { i(["on",c.call(arguments)]) },
+            once: function() { i(["once",c.call(arguments)]) },
+            off: function() { i(["off",c.call(arguments)]) },
+            get: function() {
+                if (!e._h) throw new Error("[LiveChatWidget] You can't use getters before load.");
+                return i(["get",c.call(arguments)])
+            },
+            call: function() { i(["call",c.call(arguments)]) },
+            init: function() {
+                var n = t.createElement("script");
+                n.async = !0;
+                n.type = "text/javascript";
+                n.src = "https://cdn.livechatinc.com/tracking.js";
+                t.head.appendChild(n);
+            }
+        };
+        !n.__lc.asyncInit && e.init(), n.LiveChatWidget = n.LiveChatWidget || e;
+    }(window, document, [].slice));
+
+    window.LiveChatWidget.on('ready', function() {
+        window.LiveChatWidget.call('chat:sendMessage', { text: 'Welcome to StudentSuccessHub!' });
+    });
+</script>
+<noscript>
+    <a href="https://www.livechat.com/chat-with/18112341/" rel="nofollow">Chat with us StudentSuccessHub</a>, StudentSuccessHub 
+    <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a>
+</noscript>
+<!-- End of LiveChat code -->
+
+    </script>
+    <style type="text/css">
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color:black;
+    margin: 0;
+    padding: 0;
+    color:rgb(0, 0, 0);
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    background:#ec23de;
+    color: #fff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #e8491d 3px solid;
+}
+
+header h1 {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 24px;
+}
+
+main {
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Message Box Styles */
+.message-box {
+    margin-bottom: 20px;
+}
+
+.message-box h2 {
+    background:#ec23de;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+}
+
+.message-box p {
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #a8a2a2;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+}
+
+/* Contact Form Styles */
+.contact-form {
+    margin-bottom: 20px;
+    background-color: #a8a2a2;
+}
+
+.contact-form h2 {
+    background:#ec23de;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+}
+
+.contact-form form {
+    padding: 15px;
+    background: #d7d1d1;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    color:black;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #6c6969;
+    border-radius: 7px;
+    color:black;
+}
+
+.contact-form button {
+    display: inline-block;
+    background: #ec23de;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: #ec23de;
+}
+
+/* Live Chat Styles */
+.live-chat {
+    margin-bottom: 20px;
+}
+
+.live-chat h2 {
+    background:#ec23de;
+    color: #fff;
+    padding: 11px;
+    border-radius: 10px 10px 0 0;
+}
+
+#chatBox {
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    height: 200px;
+    overflow-y: scroll;
+}
+
+.message {
+    background: #e1e1e1;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#chatInput {
+    width: calc(100% - 90px);
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#sendBtn {
+    display: inline-block;
+    background: #50b3a2;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#sendBtn:hover {
+    background: #45a094;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    #chatInput {
+        width: calc(100% - 80px);
+    }
+}
+.h5{
+    font-size:20px;
+
+}
+.h7{
+    color:rgba(139, 18, 131, 0.893);
+    font-size : 30px;
+    animation:focus;
+    transition: 1s ;
+    font-weight: 600;
+}
+.button{
+    color:#ec23de;
+    background-color: rgb(244, 239, 239);
+    border: 1px solid white;
+    border-radius: 5px;
+    width:20px;
+
+}
+.form-group button {
+    padding: 10px 15px;
+    background-color: #4b0082; /* Purple color for the button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-flex;
+    padding: 20px;
+    margin:20px;
+justify-content: space-around;}
+    .form-group{
+        display: inline-flex;
+        padding: 20px;
+        justify-content: space-between;
+  
+
+    }
+
+    </style>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<?php
+include("header.php");
+?>
+    <div class="container">
+        <header>
+            <marquee width="100%" direction="right" height="100px">
+                <h1><h7>S</h7>tudent<h7>S</h7>uccesfulHub<h5>welcome to our website</h5></h1>
+                </marquee>
+            
+        </header>
+        
+        <main>
+            <section class="message-box">
+                <h2>StudentSuccessHub</h2>
+                <p9>Hello! How can we help you today?</p9>
+            </section>
+            
+            <section class="contact-form">
+                <h2>Job Submission Form </h2>
+                <form enctype="multipart/form-data" method="post" id="contactForm">
+                    <label for="name">Job Title</label>:</label>
+                    <input type="text" id="name" name="title" required>
+                    
+                    <label for="email">Email of the user:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                      <label for="message">Job Description:</label>
+                    <textarea id="message" name="description" required></textarea>
+                    
+                        <label for="file">Upload File:</label>
+                        <input type="file" id="file" name="image" required>
+                    <input type="submit" value="submit" name="submit">
+                </form>
+            </section>
+            
+            <section class="live-chat">
+                <h2><a href="clientdashboard.php" class="btn btn-primary mb-4"> view client Dashboard details</a></h2>
+                <div id="chatBox">
+                    <div class="message">HeLoo how will we help you kindly</div>
+                </div>
+                <input type="text" id="chatInput" placeholder="Type a message..." />
+                <div class="button">
+                <button id="sendBtn">Send</button> 
+            
+                <div class="form-group">
+                    <a href="survey.php"><button >SurveyForm</button></a>
+                    <a href="index.php"><button >Homepage</button></a>
+                    <a href="login.php"><button>Logout</button>
+        
+            </div>
+        </main>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

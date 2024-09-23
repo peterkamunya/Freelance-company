@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type="text/css">
+       *{
+        box-sizing: border-box;
+       } 
+       .main{
+        color:black;
+        font-style: oblique;
+        text-align: center;
+       }
+       .h1{
+        position:relative;
+        font-size: 5rem;
+       }
+       .html{
+        block-size: 100px;
+        inline-size: 100px;
+       }
+       .h1:hover::before{
+        transform:scale(1);
+        transform-origin: bottom left;
+       }
+       .h1::before{
+        content: " ";
+        display:block;
+        position:absolute;
+        top:0;right: 0; bottom: 0;left:0;
+        inset:0 0 0 0;
+        background:hsl(200, 100, 80%);
+        z-index: -1;
+        transform: scale(0);
+        transform-origin: bottom right;
+
+       }
+       .body{
+        min-block-size: 100px;
+        min-inline-size: 100px;
+        margin:0;
+        box-sizing: border-box;
+        display: grid;
+        place-content: center;
+        font-family: system-ui,sans-serif;
+
+       }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+</head>
+    <div class="main">
+        <h1>pedroz mwangi</h1>
+<body>
+    
+</body>
+</html>
